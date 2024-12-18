@@ -1,0 +1,10 @@
+services:
+  app-backend:
+    build: .
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - proxy-access
+      - db-access
+      - broker-access
